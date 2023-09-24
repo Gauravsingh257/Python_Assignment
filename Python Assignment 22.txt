@@ -1,0 +1,239 @@
+1.) 	What is the result of the code, and explain?
+
+
+X = 'iNeuron'
+def func():
+print(X)
+
+
+func()
+
+Ans:-- The provided code defines a variable `X` with the string value `'iNeuron'` and a function `func()` that attempts to print the value of `X`. Let's analyze the code:
+
+1. The variable `X` is assigned the string value `'iNeuron'`.
+
+2. The function `func()` is defined, which tries to print the value of `X`.
+
+3. When you call `func()` using `func()`, it attempts to print the value of `X`.
+
+In this case, the code will execute successfully without any errors. When you call `func()`, it will print the value of `X`, which is `'iNeuron'`. Therefore, the output of the code will be:
+
+```
+iNeuron
+```
+
+This is because `X` is accessible within the `func()` function's scope, as it is defined in the global scope of the script.
+
+
+2.)  What is the result of the code, and explain?
+
+
+X = 'iNeuron'
+def func():
+X = 'NI!'
+
+
+func()
+print(X)
+
+Ans:--  In the provided code, there are two occurrences of the variable `X`. One is in the global scope, and the other is within the function `func()`. Here's what happens:
+
+1. The variable `X` is defined in the global scope with the value `'iNeuron'`.
+
+2. The function `func()` is defined, but it doesn't take any arguments.
+
+3. Inside the `func()` function, there is a local variable `X` assigned the value `'NI!'`. This local variable shadows (hides) the global variable `X` within the scope of the function.
+
+4. When you call `func()` using `func()`, it executes the function. Within the function's scope, the local variable `X` with the value `'NI!'` is used.
+
+5. After the function call, you print the value of `X` in the global scope using `print(X)`.
+
+Now, let's break down the result:
+
+- Inside the `func()` function, the local variable `X` is assigned the value `'NI!'`, but this is a local variable that exists only within the function's scope. It does not affect the global variable `X`.
+
+- When you print `X` in the global scope using `print(X)` after calling the function, it prints the value of the global variable `X`, which is `'iNeuron'`.
+
+So, the result of the code will be:
+
+```
+iNeuron
+```
+
+The global variable `X` remains unaffected by the local variable `X` within the function.
+
+
+3:)  What does this code print, and why?
+
+
+X = 'iNeuron'
+def func():
+X = 'NI'
+print(X)
+
+
+func()
+print(X)
+
+Ans:-- In the provided code, there are two occurrences of the variable `X`. One is in the global scope, and the other is within the function `func()`. Here's what happens:
+
+1. The variable `X` is defined in the global scope with the value `'iNeuron'`.
+
+2. The function `func()` is defined, but it doesn't take any arguments.
+
+3. Inside the `func()` function, there is a local variable `X` assigned the value `'NI'`. This local variable shadows (hides) the global variable `X` within the scope of the function.
+
+4. Inside the `func()` function, `print(X)` is used to print the value of the local variable `X`, which is `'NI'`.
+
+5. When you call `func()` using `func()`, it executes the function. Within the function's scope, the local variable `X` with the value `'NI'` is used and printed.
+
+6. After the function call, you print the value of `X` in the global scope using `print(X)`.
+
+Now, let's break down the result:
+
+- Inside the `func()` function, the local variable `X` is assigned the value `'NI'`, and this is the variable that is printed within the function's scope.
+
+- When you print `X` in the global scope using `print(X)` after calling the function, it prints the value of the global variable `X`, which is `'iNeuron'`.
+
+So, the code will print:
+
+```
+NI
+iNeuron
+```
+
+The local variable `X` within the function `func()` is separate from the global variable `X`, and they have different values.
+
+
+4:) What output does this code produce? Why?
+
+
+X = 'iNeuron'
+def func():
+global X
+X = 'NI'
+
+
+func()
+print(X)
+
+ANs:-- In the provided code, there is a global variable `X` defined in the global scope, and there is a function `func()` that uses the `global` keyword to modify the global variable `X`. Here's what happens:
+
+1. The variable `X` is defined in the global scope with the value `'iNeuron'`.
+
+2. The function `func()` is defined.
+
+3. Inside the `func()` function, the `global` keyword is used to indicate that the variable `X` being referenced is the global variable, not a local variable. It assigns the value `'NI'` to the global variable `X`.
+
+4. When you call `func()` using `func()`, it executes the function, and within the function, it modifies the global variable `X` to have the value `'NI'`.
+
+5. After the function call, you print the value of `X` in the global scope using `print(X)`.
+
+Now, let's break down the result:
+
+- Inside the `func()` function, the `global X` statement is used to specify that the variable `X` refers to the global variable. It changes the value of the global variable `X` to `'NI'`.
+
+- When you print `X` in the global scope using `print(X)` after calling the function, it prints the modified value of the global variable `X`, which is `'NI'`.
+
+So, the code will produce the following output:
+
+```
+NI
+```
+
+5:)  What about this code—what’s the output, and why?
+
+
+X = 'iNeuron'
+def func():
+X = 'NI'
+def nested():
+print(X)
+nested()
+
+
+func()
+X
+ 
+ANs:- 
+
+In the provided code, there is a global variable `X` defined in the global scope, a function `func()` that defines a local variable `X`, and a nested function `nested()` that attempts to print the variable `X`. Here's what happens:
+
+1. The variable `X` is defined in the global scope with the value `'iNeuron'`.
+
+2. The function `func()` is defined.
+
+3. Inside the `func()` function, a local variable `X` is defined with the value `'NI'`. This local variable `X` within `func()` shadows (hides) the global variable `X` within the scope of `func()`.
+
+4. Inside the `func()` function, there is another nested function `nested()` defined.
+
+5. Inside the `nested()` function, it attempts to print the value of `X`. However, since `X` is not defined within the `nested()` function's scope, Python will look for it in the nearest enclosing scope, which is the scope of `func()`.
+
+6. When you call `nested()` from within `func()` using `nested()`, it executes the `nested()` function.
+
+7. After defining the functions, you call `func()` using `func()`.
+
+Now, let's break down the result:
+
+- Inside the `nested()` function, it attempts to print the value of `X`, which is not defined within the `nested()` function itself. Instead, Python looks in the nearest enclosing scope, which is the scope of `func()`, to find a variable named `X`.
+
+- Inside the scope of `func()`, there is a local variable `X` with the value `'NI'`.
+
+- When you call `nested()` from within `func()`, it prints the value of the local variable `X` from the scope of `func()`, which is `'NI'`.
+
+- After calling `func()` using `func()`, the local variable `X` within `func()` goes out of scope, and you are left with the global variable `X` with the value `'iNeuron'`.
+
+So, the code will produce the following output:
+
+```
+NI
+'iNeuron'
+```
+
+The `nested()` function prints the local variable `X` from the scope of `func()`, and after calling `func()`, the global variable `X` retains its original value.
+
+
+6:))How about this code: what is its output in Python 3, and explain?
+
+
+def func():
+X = 'NI'
+def nested():
+nonlocal X
+X = 'Spam'
+nested()
+print(X)
+
+
+func()
+
+
+Ans:-- In the provided code, there is a function `func()` that defines a local variable `X`, a nested function `nested()`, and uses the `nonlocal` keyword to modify the variable `X` in the enclosing scope (which is `func()`'s scope). Here's what happens:
+
+1. Inside the `func()` function, a local variable `X` is defined with the value `'NI'`.
+
+2. Inside the `func()` function, there is a nested function `nested()`.
+
+3. Inside the `nested()` function, the `nonlocal` keyword is used to indicate that the variable `X` being referenced is in an enclosing scope (in this case, the scope of `func()`), not a local variable within `nested()`. It assigns the value `'Spam'` to the variable `X` in the enclosing scope (i.e., the scope of `func()`).
+
+4. The `nested()` function is called from within `func()` using `nested()`.
+
+5. After calling the `nested()` function, the `print(X)` statement within `func()` prints the value of `X`.
+
+Now, let's break down the result:
+
+- Inside the `nested()` function, the `nonlocal X` statement is used to specify that the variable `X` refers to the variable in the enclosing scope of `func()`. It changes the value of the variable `X` in the enclosing scope to `'Spam'`.
+
+- After calling the `nested()` function, the value of `X` within the scope of `func()` has been modified to `'Spam'`.
+
+- The `print(X)` statement within `func()` prints the modified value of `X`, which is `'Spam'`.
+
+So, the code will produce the following output:
+
+```
+Spam
+```
+
+The use of `nonlocal` allows the `nested()` function to modify the variable `X` in the enclosing scope of `func()`.
+
+
